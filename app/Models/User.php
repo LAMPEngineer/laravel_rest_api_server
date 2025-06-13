@@ -46,9 +46,28 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-
+    /**
+     * Stablishes a relationship between User and Comment models.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function comments(): HasMany
     {
-        return $this->hasMany(related: Comment::class);
+        return $this->hasMany(
+            related: Comment::class
+        );
     }
+
+    /**
+     * Stablishes a relationship between User and Post models.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function posts()
+    {
+        return $this->belongsToMany(
+            related: Post::class
+        );
+    }
+
 }

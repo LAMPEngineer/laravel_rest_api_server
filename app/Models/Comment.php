@@ -18,19 +18,24 @@ class Comment extends Model
     /**
      * Stablishes a relationship between the Comment and Post models.
      *
-     */
-    
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */    
     public function post(): BelongsTo
     {
-        return $this->belongsTo(related: Post::class);
+        return $this->belongsTo(
+            related: Post::class
+        );
     }
     
     /**
-     * Stablishes a relationship between the Comment and User models.
-     *
+     * Stablishes a relationship between Comment and User models.
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user(): BelongsTo
     {
-        return $this->belongsTo(related: User::class);
+        return $this->belongsTo(
+            related: User::class
+        );
     }
 }
