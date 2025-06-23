@@ -30,14 +30,12 @@ class Post extends Model
 
     /**
      * Stablishes a many-to-many relationship between Post and User models.
-     *
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function users(): BelongsToMany
     {
-        return $this->belongsToMany(
-            related:User::class
-        );
+        return $this->belongsToMany(related:User::class )->withTimestamps();
     }
 
 }
