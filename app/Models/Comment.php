@@ -16,7 +16,7 @@ class Comment extends Model
     ];
 
     /**
-     * Stablishes a relationship between the Comment and Post models.
+     * Establishes a relationship between the Comment and Post models.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */    
@@ -28,7 +28,7 @@ class Comment extends Model
     }
     
     /**
-     * Stablishes a relationship between Comment and User models.
+     * Establishes a relationship between Comment and User models.
      * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

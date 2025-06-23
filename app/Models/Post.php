@@ -17,25 +17,27 @@ class Post extends Model
     ];
     
     /**
-     * Stablishes a relationship between the Post and Comment models.
+     * Establishes a relationship between the Post and Comment models.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function comments(): HasMany
     {
         return $this->hasMany(
-            related:Comment::class
+            related: Comment::class
         );
     }
 
     /**
-     * Stablishes a many-to-many relationship between Post and User models.
+     * Establishes a many-to-many relationship between Post and User models.
      * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function users(): BelongsToMany
     {
-        return $this->belongsToMany(related:User::class )->withTimestamps();
+        return $this->belongsToMany(
+            related: User::class
+        )->withTimestamps();
     }
 
 }
