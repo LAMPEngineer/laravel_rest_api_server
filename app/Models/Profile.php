@@ -11,17 +11,13 @@ class Profile extends Model
     /** @use HasFactory<\Database\Factories\ProfileFactory> */
     use HasFactory;
 
+
     /**
-     * The attributes that are mass assignable.
+     * The attributes that are guarded against mass assignment.
      *
      * @var list<string>
      */
-    protected $fillable = [
-        'bio',
-        'date_of_birth',
-        'phone',
-        'user_id',
-    ];
+    protected $guarded = [];
 
     /**
      * Establishes a relationship between the Profile and User models.
