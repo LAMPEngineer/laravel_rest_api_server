@@ -11,9 +11,18 @@ class Comment extends Model
     /** @use HasFactory<\Database\Factories\CommentFactory> */
     use HasFactory;
 
-    protected $casts = [
-        'body' => 'array',
-    ];
+    
+    /**
+     * Get the model's attribute casting.
+     * 
+     * @return array<json, json>
+     */
+    protected function casts(): array
+    {
+        return [
+            'body' => 'array',
+        ];
+    }
 
     /**
      * Establishes a relationship between the Comment and Post models.
